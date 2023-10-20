@@ -12,23 +12,17 @@ import sys
 import openneuro as on
 
 print('------ Downloading EEG Dataset ------')
-print('Where do you want to store the dataset? Make sure you select the correct directory. We suggest selecting an empty folder.')
-directory_path = input(' Please enter the directory Path:')
+dataset_id = 'ds004504'
 
-if os.path.exists(directory_path):
-    os.chdir(directory_path)
-    print("Directory selected:", directory_path)
+try:
+    # Creating directory for the dataset
+    print("Creating directory...")
+    os.mkdir(dataset_id)
+    print()
     
-    if len(os.listdir(directory_path)) == 0:
-        print('The directory is empty')
-    else:
-        option = input('The directory is not empty. Do you want to download the Dataset here? (y/n)')
-        if str.lower(option) == 'y':
-            print('Downloading')
-        else:
-            sys.exit("Downloading cancelled")
+    # Downloading the dataset
+    dataset_path = os.getcwd()+"/"+dataset_id
+    on.download(dataset=dataset_id, target_dir=dataset_path)
     
-    dataset_id = "ds004504"
-    on.download(dataset=dataset_id, target_dir=directory_path)
-else:
-    print("Directory does not exist.")
+except:
+  print("Something went wrong, Please review the directory.")
