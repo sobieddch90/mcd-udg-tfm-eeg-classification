@@ -87,13 +87,11 @@ Source Dataset:
 [Open Neuro: Alzheimer's disease, Frontotemporal dementia and Healthy subjects](https://openneuro.org/datasets/ds004504/versions/1.0.5)
 
 **Download the dataset:**\
-This can be done by two different ways:
-- Use the following github repository that contains all the EEG recordings and clone it in a local directory:\
-https://github.com/OpenNeuroDatasets/ds004504
-- Use python and the Open Neuro library to download it in a local directory:\
-   1. Open a terminal (I recommend use the vscode terminal or the terminal from your own IDE)\
-   2. Navigate to the directory you can download the dataset.\
-   3. Run the following command: `python3 download_dataset.py`
+To download this dataset you can run the following command in the terminal:\
+`python3 download_dataset.py`\
+This will execute a python script to download the whole dataset within a new directory named `/ds004504`
+
+As an additionally option, the dataset is available in the following github repository https://github.com/OpenNeuroDatasets/ds004504, which contains all the EEG recordings and you can use it to review the content or even can be clone but it will be required to clone it to the main directory of this project.\
 
 ## 4. Exploratory Data Analysis
 
