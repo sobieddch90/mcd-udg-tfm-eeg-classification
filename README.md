@@ -91,7 +91,7 @@ To download this dataset you can run the following command in the terminal:\
 `python3 download_dataset.py`\
 This will execute a python script to download the whole dataset within a new directory named `/ds004504`
 
-As an additionally option, the dataset is available in the following github repository https://github.com/OpenNeuroDatasets/ds004504, which contains all the EEG recordings and you can use it to review the content or even can be clone but it will be required to clone it to the main directory of this project.\
+As an additionally option, the dataset is available in the following github repository https://github.com/OpenNeuroDatasets/ds004504, which contains all the EEG recordings and you can use it to review the content or even can be clone but it will be required to clone it to the main directory of this project.
 
 ## 4. Exploratory Data Analysis
 
