@@ -167,3 +167,4 @@ cython_debug/
 # Dataset Downloaded
 /ds004504
 test.ipynb
+Raws_by_Frequency_Bands.csv
