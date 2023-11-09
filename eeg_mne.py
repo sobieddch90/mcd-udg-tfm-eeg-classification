@@ -28,6 +28,8 @@ from sklearn.feature_selection import (SelectKBest, SelectPercentile,
                                        f_classif, mutual_info_classif, chi2)
 from sklearn.model_selection import (KFold, StratifiedKFold,
                                      StratifiedShuffleSplit)
+from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
+
 # Classifiers
 from sklearn.svm import SVC
 from sklearn.ensemble import AdaBoostClassifier, RandomForestClassifier
@@ -317,6 +319,84 @@ def Raw_by_Freq_Bands(raw, tmax=None, sub_id=None):
     
     return df_result
 
+'''
+-------------------------------------------------------------
+Other functions
+-------------------------------------------------------------
+'''
+
+# Get A Summary from the Training Dataset
+def Dataset_Features_Summary(df):
+    '''
+    A simple function that prints a summary from the Feature Extraction datasets.
+    
+    Parameters:
+    -----------
+    df:     pd.DataFrame
+        A pandas DataFrame obtained from the Feature Extraction step in the project.
+
+    Output:
+    -----------
+        None
+    '''
+    
+    # Get list of columns
+    list_columns = [x.replace('_',' ') for x in df.columns.to_list()]
+    # Clean participants info
+    list_columns_cleaned = [x for x in list_columns if x not in ['participant id','Age','Gender','Group']]
+    # Get a list with all the features section
+    windows = list(set([x.split()[0] for x in list_columns_cleaned]))
+    windows.sort()
+    channels = list(set([x.split()[1] for x in list_columns_cleaned]))
+    freq_bands = list(set([x.split()[2] for x in list_columns_cleaned]))
+    features = list(set([x[x.find(' ', 10):].strip() for x in list_columns_cleaned]))
+    # Print list of features attributes
+    print('Total Features:', len(list_columns))
+    print('Windows:', len(windows), '->', windows)
+    print('Channels:', len(channels),'->', channels)
+    print('Frequency Bands:', len(freq_bands), '->', freq_bands)
+    print('Features:', len(features),'->', features)
+
+# Plot the Feature Importance and get a DataFrame.
+def get_Feature_Importance(feature_names, importance_values, top_n=10):
+    '''
+    Create a pandas DataFrame that contains all the feature importance obtanied from the prediction.
+    
+    Parameters:
+    -----------
+    feature_names:      List of strings
+        A list with all the features to create the DataFrame.
+    importance_values:  List of values
+        A list with all the importance values obtained from the classifier model.
+    top_n:  Integer
+        An integer to select only the N features and values.
+
+    Output:
+    -----------
+    df:     pd.DataFrame
+        A DataFrame that contain all the top N feature importance.
+    '''
+    
+    # Create a DataFrame and Sort the values
+    df = pd.DataFrame({'Feature': feature_names, 'Importance': importance_values})
+    df.sort_values('Importance', ascending=False, inplace=True)
+    # Get the top N features
+    df_top_n = df.head(top_n)
+    df_top_n = df_top_n[::-1]
+    
+    # Plot a bar chart
+    plt.figure(figsize=(8, 5))
+    bar = plt.barh(df_top_n['Feature'], df_top_n['Importance'])
+    plt.xlabel('Importance')
+    plt.ylabel('Feature')
+    plt.title(f'Top {top_n} - Feature Importances')
+    # Add data labels
+    for rect in bar:
+        width = rect.get_width()
+        plt.text(width, rect.get_y() + rect.get_height() / 2, f'{width*100:.2f}%', ha='left', va='center')
+    plt.show
+    
+    return df
 
 '''
 -------------------------------------------------------------
@@ -472,88 +552,105 @@ def get_Scores(y_test, y_predict, _print=False):
     scores['F1 Score'] = f1_score(y_true=y_test, y_pred=y_predict, average="macro")
     scores['AUC'] = roc_auc_score(y_test, y_predict, multi_class="ovr")
     
-    print('-- SCORES --')
+    print('-- Scores: --')
     if _print:
         for sc_nm, sc_val in scores.items():
             print(f'{sc_nm}: {np.round(sc_val*100,2)} %')
     
     return scores
 
-'''
--------------------------------------------------------------
-Other functions
--------------------------------------------------------------
-'''
-
-# Get A Summary from the Training Dataset
-def Dataset_Features_Summary(df):
+# Simple Classifier
+def get_Classification(df, classifier, target='Group', key_feature=None, test_split=0.25, feature_selection=False, k_features_selected=None, params=None):
     '''
-    A simple function that prints a summary from the Feature Extraction datasets.
+    A simple classification function that can return whether the user want the Model trained, the Scores or both things.
     
     Parameters:
     -----------
-    df:     pd.DataFrame
-        A pandas DataFrame obtained from the Feature Extraction step in the project.
-
+    df:             pd.DataFrame
+        The data used to train and test the model.
+    classifier:     ML Model
+        The classifier model used to predict the classes. 
+        Options: 'Support Vector', 'Random Forest', 'XGBoost', 'LigthGBM', 'AdaBoost'
+    key_feature:    String
+        The name of the feature that contains the ID value for each subject or item.
+    target:         String
+        The name of the feature that contains the classes to predict. Default: 'Group'
+    test_split:     Float
+        The split value percentage. Default: 0.25
+    selector:       Boolean
+        The feature selector method used to select the best features. Default: False, If true will use
+        the SelectKBest with chi2 function.
+    k_features_selected:    Integer
+        Use the `k` features parameter in the feature selection method. Default: None will use the
+        feature selector with the default value.
+    params:         Dictionary
+        A dictionary that contains all the predefine parameters for the 
     Output:
     -----------
-        None
+    Classifier:     ML Model, Scores, Both objects
+        The classifier model trained.
+        A dictionary with the scores.
+        A dictionary that contains both previous objects
     '''
+    print('---- Initiating ----')
+    # Save the features used
+    cols_to_drop = [key_feature, target]
+    features = df.drop(columns=cols_to_drop).columns.to_list()
+    # Set the X and y datasets
+    X = df.drop(columns=cols_to_drop).values
+    y = df[target].values
+    # Train Test Split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_split, random_state=42)
+    print('-- Train Test Split --')
+    print('Train:', len(X_train))
+    print('Test:', len(X_test))
     
-    # Get list of columns
-    list_columns = [x.replace('_',' ') for x in df.columns.to_list()]
-    # Clean participants info
-    list_columns_cleaned = [x for x in list_columns if x not in ['participant id','Age','Gender','Group']]
-    # Get a list with all the features section
-    windows = list(set([x.split()[0] for x in list_columns_cleaned]))
-    windows.sort()
-    channels = list(set([x.split()[1] for x in list_columns_cleaned]))
-    freq_bands = list(set([x.split()[2] for x in list_columns_cleaned]))
-    features = list(set([x[x.find(' ', 10):].strip() for x in list_columns_cleaned]))
-    # Print list of features attributes
-    print('Total Features:', len(list_columns))
-    print('Windows:', len(windows), '->', windows)
-    print('Channels:', len(channels),'->', channels)
-    print('Frequency Bands:', len(freq_bands), '->', freq_bands)
-    print('Features:', len(features),'->', features)
-
-# Plot the Feature Importance and get a DataFrame.
-def get_Feature_Importance(feature_names, importance_values, top_n=10):
-    '''
-    Create a pandas DataFrame that contains all the feature importance obtanied from the prediction.
+    # Feature Selection
+    X_train_selected = X_train
+    X_test_selected = X_test
+    features_selected = features
+    if feature_selection:
+        print('-- Feature Selection --')
+        if k_features_selected != None:
+            selector = SelectKBest(score_func=chi2, k=k_features_selected)
+        else:
+            selector = SelectKBest(score_func=chi2)
+        # Override the X_train_selected and X_test_selected
+        X_train_selected = selector.fit_transform(X_train, y_train)
+        X_test_selected = selector.transform(X_test)
+        # Get Features Selected
+        features_selected = selector.get_feature_names_out(features).tolist()
     
-    Parameters:
-    -----------
-    feature_names:      List of strings
-        A list with all the features to create the DataFrame.
-    importance_values:  List of values
-        A list with all the importance values obtained from the classifier model.
-    top_n:  Integer
-        An integer to select only the N features and values.
-
-    Output:
-    -----------
-    df:     pd.DataFrame
-        A DataFrame that contain all the top N feature importance.
-    '''
+    # Classification
+    print('-- Classification --')
+    clf = classifiers[classifier]
+    # Hyperparameter Optimization
+    if params != None:
+        print('-- Getting Best Parameters --')
+        clf_temp = classifiers[classifier]
+        grid_search = GridSearchCV(estimator=clf_temp, param_grid=params, scoring='roc_auc', cv=5)
+        # Perform the grid search
+        grid_search.fit(X_train_selected, y_train)
+        # Get the best hyperparameters
+        best_params = grid_search.best_params_
+        # Set the best parameters 
+        clf.set_params(**best_params)
+    # Training
+    clf.fit(X_train_selected, y_train)
+    # Predict
+    y_pred = clf.predict(X_test_selected)
+    # Scores
+    clf_scores = get_Scores(y_test, y_pred, True)
     
-    # Create a DataFrame and Sort the values
-    df = pd.DataFrame({'Feature': feature_names, 'Importance': importance_values})
-    df.sort_values('Importance', ascending=False, inplace=True)
-    # Get the top N features
-    df_top_n = df.head(top_n)
-    df_top_n = df_top_n[::-1]
+    print('-- Feature Importance --')
+    df_feature_importances = get_Feature_Importance(features_selected, clf.feature_importances_, top_n=10)
     
-    # Plot a bar chart
-    plt.figure(figsize=(10, 6))
-    bar = plt.barh(df_top_n['Feature'], df_top_n['Importance'])
-    plt.xlabel('Importance')
-    plt.ylabel('Feature')
-    plt.title(f'Top {top_n} - Feature Importances')
-    # Add data labels
-    for rect in bar:
-        width = rect.get_width()
-        plt.text(width, rect.get_y() + rect.get_height() / 2, f'{width*100:.2f}%', ha='left', va='center')
-    plt.show
+    print('-- Saving results --')
+    result = {
+        'model': clf,
+        'scores': clf_scores,
+        'feature_importance': df_feature_importances
+    }
     
-    return df_top_n
+    print('-- Finishing Prediction --')
+    return result
