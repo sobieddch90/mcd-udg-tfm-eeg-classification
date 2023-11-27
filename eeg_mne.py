@@ -278,6 +278,67 @@ def PSD_Features_from_Epochs(epochs, sub_id=None, show_summary=True):
 
     return flat_results
 
+# Create a Dictionary of features from PSD by using MNE.Epochs (Windows)
+def PSD_Features_from_Epochs_2(epochs, sub_id=None, show_summary=True):
+    '''
+    From the MNE methods is possible to create a PSD instance for each window that can be used to obtain multiple features
+    such as total power, standard deviation, average power, peak to peak, or spectral entropy, this method use the total power
+    in the signal without split it into frequency bands
+    
+    Parameters:
+    -----------
+    epochs:     MNE.Epoch object
+        To get all the features for each window, it is required to provide an MNE.Epoch object that can be used to perform
+        and create all the features.
+    sub_id:     string
+        Tag the result with the subject_id from the dataset source, this is an additional feature to ensure it doesn't blend 
+        the results with that one obtained from another subject.
+    show_summary:   Boolean
+        An additional option to print a summary of features and data results.
+    Output:
+    -----------
+    df:     pd.DataFrame
+        A pandas DataFrame that contains the EEG signals for each frequency band for the entired Raw data.
+    '''
+    
+    # Set the variables
+    sfreq = epochs.info['sfreq']
+    n_channels = epochs.ch_names
+    number_windows = epochs.get_data().shape[0]
+    
+    results = {}
+    # Compute features from PSD method using PSD_ARRAY_WELCH
+    psd_all, freqs_all = psd_array_welch(epochs.get_data(), sfreq=sfreq, verbose='CRITICAL')
+        
+    # Compute metrics & save results
+    results['total_power'] = psd_all.sum(axis=2)
+    #results['relative_power'] = psd.sum(axis=2)/psd_all.sum(axis=2) # Not required without freq. bands
+    results['std_dev'] = np.std(psd_all, axis=2)
+    results['average_power'] = psd_all.mean(axis=2)
+    results['spectral_entropy'] = -np.sum(np.log(psd_all) * psd_all, axis=2)
+    results['peak_to_peak'] = np.ptp(psd_all,axis=2)
+
+    flat_results = {}
+    # Add Participant_ID
+    if sub_id!=None:
+        flat_results['participant_id'] = sub_id
+    # Add features in a flat structure
+    for key, array in results.items():
+        for i in range(array.shape[0]):
+            for j in range(array.shape[1]):
+                new_key = f'w{i}_{n_channels[j]}_{key}'
+                flat_results[new_key] = array[i, j]
+    
+    # Print Summary of results
+    if show_summary:
+        print('Summary...')
+        print('-Number of Windows:', number_windows)
+        print('-Number of Channels:', len(n_channels))
+        print('-Number of features computed:', len(features)-1)
+        print('--Total Features', len(flat_results))
+
+    return flat_results
+
 # ---
 # Create a Dictionary of features from PSD by using MNE.Epochs (Windows)
 def Raw_by_Freq_Bands(raw, tmax=None, sub_id=None):
@@ -357,6 +418,45 @@ def Dataset_Features_Summary(df):
     print('Frequency Bands:', len(freq_bands), '->', freq_bands)
     print('Features:', len(features),'->', features)
 
+# Manual Feature Selection
+def filter_Features(df, freq_bands=[], features=[]):
+    '''
+    Based on the Training Dataset, this function is to preselect a set of features from those calculated 
+    in the Feature Extraction step. 
+    
+    Parameters:
+    -----------
+    df:         pd.DataFrame
+        A Dataframe that contains the Training Dataset
+    features:   List of String
+        A list that contains the group of Features the user wants to select.
+    option:     Integer
+        An integer 1 to set the filter for All the values that match the feature list provided, 
+        a second option with integer 2 to filter any of the features that match the list provided.
+    '''
+    # Select all the columns as a list
+    features_list = df.columns.tolist()
+    # Create a list of the features that will be kept.
+    main_features = ['participant_id', 'Age', 'Gender', 'Group']
+    # Filter the list of features based on the frequency bands provided
+    if len(freq_bands) > 0:
+        freq_bands_filtered = [item for item in features_list if any(f in item for f in freq_bands)]
+    else:
+        freq_bands_filtered = features_list
+    # Filter the list of features based on the features provided
+    if len(features) > 0:
+        final_filtered = [item for item in freq_bands_filtered if any(f in item for f in features)]
+    else:
+        final_filtered = freq_bands_filtered
+    # Validate if the result is not empty
+    if len(final_filtered) == 0:
+        raise ValueError("Features provided should be a valid sublist from the features.")
+    # Extend the list with the main_features
+    main_features.extend(final_filtered)
+    # Return a DataFrame that contains only the Features selected.
+    print('Number of Features Returned:', len(main_features))
+    return df[main_features]
+
 # Plot the Feature Importance and get a DataFrame.
 def get_Feature_Importance(feature_names, importance_values, top_n=10):
     '''
@@ -406,13 +506,16 @@ ML Modeling
 
 # Global variables
 # ---
+params_lightGBM = {
+   'verbose': -1           # Avoid warnings
+}
 
 # Classifier Models
 classifiers = {
     'Support Vector': SVC(),
     'Random Forest': RandomForestClassifier(),
     'XGBoost': xgb.XGBClassifier(),
-    'LigthGBM': lgb.LGBMClassifier(),
+    'LigthGBM': lgb.LGBMClassifier(**params_lightGBM),
     'AdaBoost': AdaBoostClassifier()
 }
 

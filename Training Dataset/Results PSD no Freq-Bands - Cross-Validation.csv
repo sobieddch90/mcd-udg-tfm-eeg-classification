@@ -1,0 +1,91 @@
+,feature_extraction,channels,classifier,cross-validation,feature-selection,accuracy,f1_score,AUC
+0,PSD without Freq-Bands,All,Support Vector,KFold,anova,0.5194444444444445,0.48753246753246754,0.52
+1,PSD without Freq-Bands,All,Support Vector,KFold,mutual_info_classif,0.3861111111111111,0.2776223776223776,0.475
+2,PSD without Freq-Bands,All,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+3,PSD without Freq-Bands,All,Support Vector,StratifiedKFold,anova,0.42777777777777776,0.3777722277722278,0.445
+4,PSD without Freq-Bands,All,Support Vector,StratifiedKFold,mutual_info_classif,0.5,0.4379004329004329,0.525
+5,PSD without Freq-Bands,All,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+6,PSD without Freq-Bands,All,Support Vector,StratifiedShuffleSplit,anova,0.5333333333333334,0.49798867798867796,0.54
+7,PSD without Freq-Bands,All,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.4888888888888888,0.37948717948717947,0.5349999999999999
+8,PSD without Freq-Bands,All,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+9,PSD without Freq-Bands,All,Random Forest,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+10,PSD without Freq-Bands,All,Random Forest,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+11,PSD without Freq-Bands,All,Random Forest,KFold,chi2,0.5722222222222222,0.5349999999999999,0.645
+12,PSD without Freq-Bands,All,Random Forest,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+13,PSD without Freq-Bands,All,Random Forest,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+14,PSD without Freq-Bands,All,Random Forest,StratifiedKFold,chi2,0.38055555555555554,0.3622222222222223,0.39
+15,PSD without Freq-Bands,All,Random Forest,StratifiedShuffleSplit,anova,0.48888888888888893,0.3274725274725275,0.5
+16,PSD without Freq-Bands,All,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.4666666666666666,0.31758241758241756,0.5
+17,PSD without Freq-Bands,All,Random Forest,StratifiedShuffleSplit,chi2,0.5333333333333334,0.5311111111111112,0.54
+18,PSD without Freq-Bands,All,XGBoost,KFold,anova,0.5638888888888889,0.5113386613386612,0.5316666666666667
+19,PSD without Freq-Bands,All,XGBoost,KFold,mutual_info_classif,0.49722222222222223,0.47190476190476194,0.48
+20,PSD without Freq-Bands,All,XGBoost,KFold,chi2,0.45555555555555555,0.4372222222222222,0.45833333333333337
+21,PSD without Freq-Bands,All,XGBoost,StratifiedKFold,anova,0.4027777777777777,0.38332611832611835,0.39499999999999996
+22,PSD without Freq-Bands,All,XGBoost,StratifiedKFold,mutual_info_classif,0.43611111111111106,0.4200432900432901,0.43
+23,PSD without Freq-Bands,All,XGBoost,StratifiedKFold,chi2,0.3416666666666667,0.32301587301587303,0.36
+24,PSD without Freq-Bands,All,XGBoost,StratifiedShuffleSplit,anova,0.6,0.5761904761904761,0.6
+25,PSD without Freq-Bands,All,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.5333333333333334,0.5213203463203463,0.5250000000000001
+26,PSD without Freq-Bands,All,XGBoost,StratifiedShuffleSplit,chi2,0.4666666666666666,0.4482395382395382,0.465
+27,PSD without Freq-Bands,All,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+28,PSD without Freq-Bands,All,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+29,PSD without Freq-Bands,All,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+30,PSD without Freq-Bands,All,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+31,PSD without Freq-Bands,All,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+32,PSD without Freq-Bands,All,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+33,PSD without Freq-Bands,All,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+34,PSD without Freq-Bands,All,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+35,PSD without Freq-Bands,All,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+36,PSD without Freq-Bands,All,AdaBoost,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+37,PSD without Freq-Bands,All,AdaBoost,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+38,PSD without Freq-Bands,All,AdaBoost,KFold,chi2,0.41388888888888886,0.3844877344877345,0.48166666666666663
+39,PSD without Freq-Bands,All,AdaBoost,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+40,PSD without Freq-Bands,All,AdaBoost,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+41,PSD without Freq-Bands,All,AdaBoost,StratifiedKFold,chi2,0.4305555555555555,0.385995670995671,0.45
+42,PSD without Freq-Bands,All,AdaBoost,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+43,PSD without Freq-Bands,All,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+44,PSD without Freq-Bands,All,AdaBoost,StratifiedShuffleSplit,chi2,0.48888888888888893,0.4761111111111111,0.49000000000000005
+45,PSD without Freq-Bands,Fp1,Support Vector,KFold,anova,0.3861111111111111,0.2776223776223776,0.475
+46,PSD without Freq-Bands,Fp1,Support Vector,KFold,mutual_info_classif,0.475,0.41753246753246753,0.5516666666666666
+47,PSD without Freq-Bands,Fp1,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+48,PSD without Freq-Bands,Fp1,Support Vector,StratifiedKFold,anova,0.38055555555555554,0.26837606837606837,0.425
+49,PSD without Freq-Bands,Fp1,Support Vector,StratifiedKFold,mutual_info_classif,0.49444444444444446,0.4280769230769231,0.525
+50,PSD without Freq-Bands,Fp1,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+51,PSD without Freq-Bands,Fp1,Support Vector,StratifiedShuffleSplit,anova,0.4444444444444445,0.35084915084915086,0.47000000000000003
+52,PSD without Freq-Bands,Fp1,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.39999999999999997,0.32653846153846156,0.425
+53,PSD without Freq-Bands,Fp1,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+54,PSD without Freq-Bands,Fp1,Random Forest,KFold,anova,0.3666666666666667,0.2942279942279942,0.44000000000000006
+55,PSD without Freq-Bands,Fp1,Random Forest,KFold,mutual_info_classif,0.4333333333333334,0.2996336996336996,0.5
+56,PSD without Freq-Bands,Fp1,Random Forest,KFold,chi2,0.5472222222222223,0.501060606060606,0.62
+57,PSD without Freq-Bands,Fp1,Random Forest,StratifiedKFold,anova,0.4333333333333333,0.3867893217893218,0.44499999999999995
+58,PSD without Freq-Bands,Fp1,Random Forest,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+59,PSD without Freq-Bands,Fp1,Random Forest,StratifiedKFold,chi2,0.38055555555555554,0.3622222222222223,0.39499999999999996
+60,PSD without Freq-Bands,Fp1,Random Forest,StratifiedShuffleSplit,anova,0.4222222222222222,0.36063825063825067,0.445
+61,PSD without Freq-Bands,Fp1,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.4666666666666666,0.35615384615384615,0.51
+62,PSD without Freq-Bands,Fp1,Random Forest,StratifiedShuffleSplit,chi2,0.5333333333333334,0.5231168831168832,0.5399999999999999
+63,PSD without Freq-Bands,Fp1,XGBoost,KFold,anova,0.5472222222222222,0.526911976911977,0.5549999999999999
+64,PSD without Freq-Bands,Fp1,XGBoost,KFold,mutual_info_classif,0.45833333333333337,0.4451731601731602,0.45499999999999996
+65,PSD without Freq-Bands,Fp1,XGBoost,KFold,chi2,0.45555555555555555,0.44645021645021643,0.49833333333333335
+66,PSD without Freq-Bands,Fp1,XGBoost,StratifiedKFold,anova,0.3555555555555555,0.3312337662337662,0.36000000000000004
+67,PSD without Freq-Bands,Fp1,XGBoost,StratifiedKFold,mutual_info_classif,0.5638888888888889,0.5467748917748918,0.5800000000000001
+68,PSD without Freq-Bands,Fp1,XGBoost,StratifiedKFold,chi2,0.40555555555555556,0.3794805194805195,0.41
+69,PSD without Freq-Bands,Fp1,XGBoost,StratifiedShuffleSplit,anova,0.4666666666666666,0.4547402597402598,0.47000000000000003
+70,PSD without Freq-Bands,Fp1,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.43487012987012996,0.445
+71,PSD without Freq-Bands,Fp1,XGBoost,StratifiedShuffleSplit,chi2,0.4222222222222222,0.4037950937950939,0.43
+72,PSD without Freq-Bands,Fp1,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+73,PSD without Freq-Bands,Fp1,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+74,PSD without Freq-Bands,Fp1,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+75,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+76,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+77,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+78,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+79,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+80,PSD without Freq-Bands,Fp1,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+81,PSD without Freq-Bands,Fp1,AdaBoost,KFold,anova,0.38888888888888884,0.3273448773448773,0.45666666666666667
+82,PSD without Freq-Bands,Fp1,AdaBoost,KFold,mutual_info_classif,0.3916666666666667,0.3513708513708514,0.465
+83,PSD without Freq-Bands,Fp1,AdaBoost,KFold,chi2,0.41388888888888886,0.3844877344877345,0.48166666666666663
+84,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedKFold,anova,0.4111111111111111,0.3479004329004329,0.43499999999999994
+85,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedKFold,mutual_info_classif,0.47777777777777775,0.36128205128205126,0.515
+86,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedKFold,chi2,0.4305555555555555,0.385995670995671,0.45
+87,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedShuffleSplit,anova,0.48888888888888893,0.4226440226440227,0.515
+88,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+89,PSD without Freq-Bands,Fp1,AdaBoost,StratifiedShuffleSplit,chi2,0.48888888888888893,0.4761111111111111,0.49000000000000005

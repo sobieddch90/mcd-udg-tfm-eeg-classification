@@ -18,11 +18,12 @@ The predictive model includes two distinct components. The first facet involves 
   - [1. Planning and Methodology](#1-planning-and-methodology)
   - [2. Installation and Setup](#2-installation-and-setup)
   - [3. Data](#3-data)
-  - [4. Exploratory Data Analysis](#4-exploratory-data-analysis)
-  - [5. Feature Extraction](#5-feature-extraction)
-  - [6. Modeling](#6-modeling)
-  - [7. Results](#7-results)
-  - [8. License](#8-license)
+  - [4. Methodological Contribution](#4-methodological-contribution)
+    - [EEG Data Exploration](#eeg-data-exploration)
+    - [Feature Extraction](#feature-extraction)
+    - [Modeling](#modeling)
+    - [Results](#results)
+  - [5. Results](#5-results)
 
 <!-- END OF TABLE OF CONTENTS -->
 
@@ -93,12 +94,28 @@ This will execute a python script to download the whole dataset within a new dir
 
 As an additionally option, the dataset is available in the following github repository https://github.com/OpenNeuroDatasets/ds004504, which contains all the EEG recordings and you can use it to review the content or even can be clone but it will be required to clone it to the main directory of this project.
 
-## 4. Exploratory Data Analysis
+## 4. Methodological Contribution
+Because the data used has already been collected and pre-processed, the work done in this project has been divided into the following steps: 
 
-## 5. Feature Extraction
+### EEG Data Exploration
+In order to know the data, and to become familiar with the use of the different functions and methods offered by MNE for the processing of EEG data, some explorations have been made that allowed to design the next steps in the work, such as the use of Epochs creation (windows), extracting features using PSD and recognizing the behavior of signals with either the original or pre-processed data.
 
-## 6. Modeling
+### Feature Extraction
+During the extraction of the characteristics, it was necessary to balance the classes to avoid overfitting in the results of the predictions, likewise, the data was first converted from Raw Data to Windows data using MNE, each window has a size of 60 seconds, and an overlapping of 20 seconds, and for all participants to have the same number of windows a crop of 480 seconds was performed on all participants.
 
-## 7. Results
+A downsampling was performed to work on the training of the models directly with the results generated in this step.
 
-## 8. License
+### Modeling
+During the training, 3 different approaches were followed based on the data extracted during Feature Extraction. The first of them uses all the features obtained, then uses only the features of Total_Power and Standard_Deviation manually reducing the features, and finally uses the features of the frequency bands Theta and Alpha, which were previously used in other work as they are related to the behavior of the pole-front EEG signals.
+
+The training was first carried out by performing cross-validation with 3 different methods (KFold, StratifiedKFold, and StratifiedShuffleSplit) to determine which of these offered better performance, In addition, the training was performed using 5 different ML models such as SVM, Random Forest, XGBoost, LightGBM and AdaBoost which were chosen for their performance advantages, versatility and operation with data containing a high number of features. In addition, the SelectKBest has 3 different functions for the selection of features with which to obtain better results.
+
+After completing the Cross-Validation, and with the result of the models that presented the best results, we proceeded to make an Optimization of Hyperparameters and finally obtained the results that allowed the comparison of the predictions under the use of all the channels or only the front pole channels.
+
+### Results
+To discuss the results, 3 different performance metrics were used: Accuracy, F1 Score, and ROC AUC, in addition to confusion matrix support.
+
+The final idea of the project has been to verify that the performance of the predictions made with the use of EEG front channels such as FP1 is reliable and that obtaining signals through BCI devices that provide a lower number of channels is feasible to develop multiple approaches to research.
+
+## 5. Results
+

@@ -1,0 +1,91 @@
+,feature_extraction,channels,classifier,cross-validation,feature-selection,accuracy,f1_score,AUC
+0,PSD only Total Power,All,Support Vector,KFold,anova,0.36666666666666664,0.3129020979020979,0.3866666666666666
+1,PSD only Total Power,All,Support Vector,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+2,PSD only Total Power,All,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+3,PSD only Total Power,All,Support Vector,StratifiedKFold,anova,0.5,0.48132034632034637,0.505
+4,PSD only Total Power,All,Support Vector,StratifiedKFold,mutual_info_classif,0.5222222222222223,0.40628205128205136,0.555
+5,PSD only Total Power,All,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+6,PSD only Total Power,All,Support Vector,StratifiedShuffleSplit,anova,0.4444444444444445,0.37402597402597404,0.43500000000000005
+7,PSD only Total Power,All,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.306043956043956,0.475
+8,PSD only Total Power,All,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+9,PSD only Total Power,All,Random Forest,KFold,anova,0.45833333333333337,0.3953479853479854,0.49000000000000005
+10,PSD only Total Power,All,Random Forest,KFold,mutual_info_classif,0.4083333333333333,0.3623321123321123,0.42000000000000004
+11,PSD only Total Power,All,Random Forest,KFold,chi2,0.5,0.4361294261294262,0.45999999999999996
+12,PSD only Total Power,All,Random Forest,StratifiedKFold,anova,0.5444444444444445,0.4796137196137196,0.5650000000000001
+13,PSD only Total Power,All,Random Forest,StratifiedKFold,mutual_info_classif,0.33611111111111114,0.30320512820512824,0.35
+14,PSD only Total Power,All,Random Forest,StratifiedKFold,chi2,0.5444444444444445,0.5230303030303031,0.545
+15,PSD only Total Power,All,Random Forest,StratifiedShuffleSplit,anova,0.4,0.2825174825174825,0.45
+16,PSD only Total Power,All,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.3777777777777777,0.33965534465534464,0.37
+17,PSD only Total Power,All,Random Forest,StratifiedShuffleSplit,chi2,0.4444444444444445,0.4131168831168831,0.445
+18,PSD only Total Power,All,XGBoost,KFold,anova,0.3694444444444444,0.35517316017316014,0.37666666666666665
+19,PSD only Total Power,All,XGBoost,KFold,mutual_info_classif,0.3416666666666667,0.3009179709179709,0.32333333333333336
+20,PSD only Total Power,All,XGBoost,KFold,chi2,0.5694444444444444,0.49996780996781,0.53
+21,PSD only Total Power,All,XGBoost,StratifiedKFold,anova,0.5444444444444445,0.54,0.55
+22,PSD only Total Power,All,XGBoost,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.412988677988678,0.44000000000000006
+23,PSD only Total Power,All,XGBoost,StratifiedKFold,chi2,0.5222222222222223,0.5047008547008547,0.52
+24,PSD only Total Power,All,XGBoost,StratifiedShuffleSplit,anova,0.6,0.5646120546120545,0.585
+25,PSD only Total Power,All,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.4666666666666666,0.457005772005772,0.48
+26,PSD only Total Power,All,XGBoost,StratifiedShuffleSplit,chi2,0.4222222222222222,0.41722222222222216,0.43
+27,PSD only Total Power,All,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+28,PSD only Total Power,All,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+29,PSD only Total Power,All,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+30,PSD only Total Power,All,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+31,PSD only Total Power,All,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+32,PSD only Total Power,All,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+33,PSD only Total Power,All,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+34,PSD only Total Power,All,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+35,PSD only Total Power,All,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+36,PSD only Total Power,All,AdaBoost,KFold,anova,0.39166666666666666,0.3367116217116217,0.4416666666666667
+37,PSD only Total Power,All,AdaBoost,KFold,mutual_info_classif,0.4527777777777778,0.4123321123321123,0.47000000000000003
+38,PSD only Total Power,All,AdaBoost,KFold,chi2,0.5027777777777778,0.48367965367965365,0.51
+39,PSD only Total Power,All,AdaBoost,StratifiedKFold,anova,0.5,0.43516927516927517,0.52
+40,PSD only Total Power,All,AdaBoost,StratifiedKFold,mutual_info_classif,0.42777777777777787,0.3893162393162393,0.44000000000000006
+41,PSD only Total Power,All,AdaBoost,StratifiedKFold,chi2,0.5,0.48623376623376624,0.51
+42,PSD only Total Power,All,AdaBoost,StratifiedShuffleSplit,anova,0.4222222222222222,0.3111538461538461,0.47000000000000003
+43,PSD only Total Power,All,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4,0.3698717948717949,0.39499999999999996
+44,PSD only Total Power,All,AdaBoost,StratifiedShuffleSplit,chi2,0.5111111111111111,0.47623376623376623,0.515
+45,PSD only Total Power,Fp1,Support Vector,KFold,anova,0.4611111111111111,0.3697435897435898,0.55
+46,PSD only Total Power,Fp1,Support Vector,KFold,mutual_info_classif,0.45555555555555555,0.33974358974358976,0.5
+47,PSD only Total Power,Fp1,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+48,PSD only Total Power,Fp1,Support Vector,StratifiedKFold,anova,0.4805555555555555,0.35888111888111884,0.525
+49,PSD only Total Power,Fp1,Support Vector,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.3920940170940171,0.465
+50,PSD only Total Power,Fp1,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+51,PSD only Total Power,Fp1,Support Vector,StratifiedShuffleSplit,anova,0.4666666666666666,0.35615384615384615,0.515
+52,PSD only Total Power,Fp1,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.4222222222222222,0.320979020979021,0.47000000000000003
+53,PSD only Total Power,Fp1,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+54,PSD only Total Power,Fp1,Random Forest,KFold,anova,0.3611111111111111,0.32756132756132755,0.37833333333333335
+55,PSD only Total Power,Fp1,Random Forest,KFold,mutual_info_classif,0.4333333333333333,0.4192279942279942,0.45166666666666666
+56,PSD only Total Power,Fp1,Random Forest,KFold,chi2,0.49722222222222223,0.4734343434343435,0.53
+57,PSD only Total Power,Fp1,Random Forest,StratifiedKFold,anova,0.4333333333333333,0.37987179487179495,0.45499999999999996
+58,PSD only Total Power,Fp1,Random Forest,StratifiedKFold,mutual_info_classif,0.3388888888888889,0.31811688311688313,0.335
+59,PSD only Total Power,Fp1,Random Forest,StratifiedKFold,chi2,0.5222222222222223,0.45521090021090027,0.5449999999999999
+60,PSD only Total Power,Fp1,Random Forest,StratifiedShuffleSplit,anova,0.4444444444444445,0.4213636363636364,0.45499999999999996
+61,PSD only Total Power,Fp1,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.4222222222222222,0.38640859140859146,0.41
+62,PSD only Total Power,Fp1,Random Forest,StratifiedShuffleSplit,chi2,0.5555555555555556,0.5287989787989789,0.55
+63,PSD only Total Power,Fp1,XGBoost,KFold,anova,0.4722222222222222,0.4553391053391054,0.5133333333333333
+64,PSD only Total Power,Fp1,XGBoost,KFold,mutual_info_classif,0.4583333333333333,0.44914862914862913,0.4666666666666666
+65,PSD only Total Power,Fp1,XGBoost,KFold,chi2,0.49722222222222223,0.4694155844155844,0.5033333333333333
+66,PSD only Total Power,Fp1,XGBoost,StratifiedKFold,anova,0.5,0.47781385281385286,0.505
+67,PSD only Total Power,Fp1,XGBoost,StratifiedKFold,mutual_info_classif,0.3416666666666667,0.33301587301587304,0.35
+68,PSD only Total Power,Fp1,XGBoost,StratifiedKFold,chi2,0.5222222222222221,0.5034559884559885,0.54
+69,PSD only Total Power,Fp1,XGBoost,StratifiedShuffleSplit,anova,0.5111111111111112,0.47700577200577204,0.53
+70,PSD only Total Power,Fp1,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.5111111111111111,0.4984559884559885,0.51
+71,PSD only Total Power,Fp1,XGBoost,StratifiedShuffleSplit,chi2,0.5999999999999999,0.55999666999667,0.605
+72,PSD only Total Power,Fp1,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+73,PSD only Total Power,Fp1,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+74,PSD only Total Power,Fp1,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+75,PSD only Total Power,Fp1,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+76,PSD only Total Power,Fp1,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+77,PSD only Total Power,Fp1,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+78,PSD only Total Power,Fp1,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+79,PSD only Total Power,Fp1,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+80,PSD only Total Power,Fp1,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+81,PSD only Total Power,Fp1,AdaBoost,KFold,anova,0.45833333333333337,0.4432539682539683,0.4833333333333333
+82,PSD only Total Power,Fp1,AdaBoost,KFold,mutual_info_classif,0.4111111111111111,0.38611111111111107,0.43166666666666664
+83,PSD only Total Power,Fp1,AdaBoost,KFold,chi2,0.5416666666666666,0.5025413475413475,0.545
+84,PSD only Total Power,Fp1,AdaBoost,StratifiedKFold,anova,0.38611111111111107,0.31997280497280495,0.41000000000000003
+85,PSD only Total Power,Fp1,AdaBoost,StratifiedKFold,mutual_info_classif,0.4305555555555555,0.40502164502164506,0.43499999999999994
+86,PSD only Total Power,Fp1,AdaBoost,StratifiedKFold,chi2,0.49722222222222223,0.48613275613275625,0.51
+87,PSD only Total Power,Fp1,AdaBoost,StratifiedShuffleSplit,anova,0.48888888888888893,0.4681168831168831,0.48999999999999994
+88,PSD only Total Power,Fp1,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4666666666666666,0.457005772005772,0.47000000000000003
+89,PSD only Total Power,Fp1,AdaBoost,StratifiedShuffleSplit,chi2,0.5111111111111111,0.5020923520923521,0.505
