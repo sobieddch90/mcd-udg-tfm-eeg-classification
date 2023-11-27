@@ -11,4 +11,3 @@ Here you can find the following notebooks:
 2. **EEG Windows**: Due to the EEG Data can be difficult to handle and understand, and due to this data are a Time Series representation, this allow us to create windows from the data and perform a better aproach to maintain the relationship in the features extracted over the time.
 
 Next Step after the Data Exploration is [Feature Extraction](https://github.com/sobieddch90/mcd-udg-tfm-eeg-classification/blob/main/Feature%20Extraction)
-
