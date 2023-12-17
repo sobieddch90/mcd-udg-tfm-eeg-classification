@@ -1,0 +1,91 @@
+,feature_extraction,channels,classifier,cross-validation,feature-selection,accuracy,f1_score,AUC
+0,PSD - Total Power & Spectral Density Features,All,Support Vector,KFold,anova,0.45555555555555555,0.3613220113220113,0.5216666666666667
+1,PSD - Total Power & Spectral Density Features,All,Support Vector,KFold,mutual_info_classif,0.47777777777777775,0.3965367965367965,0.5449999999999999
+2,PSD - Total Power & Spectral Density Features,All,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+3,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedKFold,anova,0.5222222222222223,0.4166666666666667,0.54
+4,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedKFold,mutual_info_classif,0.425,0.3506837606837607,0.445
+5,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+6,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedShuffleSplit,anova,0.5777777777777778,0.4954245754245754,0.5700000000000001
+7,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.6444444444444445,0.5731623931623931,0.65
+8,PSD - Total Power & Spectral Density Features,All,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+9,PSD - Total Power & Spectral Density Features,All,Random Forest,KFold,anova,0.38888888888888884,0.3057664557664558,0.4616666666666667
+10,PSD - Total Power & Spectral Density Features,All,Random Forest,KFold,mutual_info_classif,0.4333333333333334,0.3382051282051282,0.51
+11,PSD - Total Power & Spectral Density Features,All,Random Forest,KFold,chi2,0.5472222222222223,0.5010606060606061,0.615
+12,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedKFold,anova,0.45555555555555555,0.32617216117216113,0.465
+13,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedKFold,mutual_info_classif,0.5222222222222221,0.40628205128205125,0.5549999999999999
+14,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedKFold,chi2,0.4277777777777777,0.4198701298701299,0.44000000000000006
+15,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+16,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+17,PSD - Total Power & Spectral Density Features,All,Random Forest,StratifiedShuffleSplit,chi2,0.5777777777777777,0.5755555555555556,0.5900000000000001
+18,PSD - Total Power & Spectral Density Features,All,XGBoost,KFold,anova,0.5888888888888889,0.5479453879453879,0.5766666666666667
+19,PSD - Total Power & Spectral Density Features,All,XGBoost,KFold,mutual_info_classif,0.6416666666666666,0.6244733044733045,0.6483333333333334
+20,PSD - Total Power & Spectral Density Features,All,XGBoost,KFold,chi2,0.5666666666666667,0.5464502164502164,0.5883333333333335
+21,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedKFold,anova,0.45555555555555555,0.42580086580086585,0.4699999999999999
+22,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedKFold,mutual_info_classif,0.5166666666666666,0.4931168831168831,0.505
+23,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedKFold,chi2,0.5222222222222223,0.5101226551226551,0.54
+24,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedShuffleSplit,anova,0.6,0.5972222222222223,0.6050000000000001
+25,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.6888888888888889,0.6796969696969696,0.6900000000000001
+26,PSD - Total Power & Spectral Density Features,All,XGBoost,StratifiedShuffleSplit,chi2,0.5333333333333334,0.5148701298701299,0.54
+27,PSD - Total Power & Spectral Density Features,All,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+28,PSD - Total Power & Spectral Density Features,All,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+29,PSD - Total Power & Spectral Density Features,All,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+30,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+31,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+32,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+33,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+34,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+35,PSD - Total Power & Spectral Density Features,All,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+36,PSD - Total Power & Spectral Density Features,All,AdaBoost,KFold,anova,0.38888888888888884,0.3057664557664558,0.4616666666666667
+37,PSD - Total Power & Spectral Density Features,All,AdaBoost,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+38,PSD - Total Power & Spectral Density Features,All,AdaBoost,KFold,chi2,0.41388888888888886,0.3844877344877345,0.48166666666666663
+39,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedKFold,anova,0.4333333333333333,0.3162820512820512,0.47000000000000003
+40,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+41,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedKFold,chi2,0.4305555555555555,0.385995670995671,0.45
+42,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+43,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+44,PSD - Total Power & Spectral Density Features,All,AdaBoost,StratifiedShuffleSplit,chi2,0.48888888888888893,0.4761111111111111,0.49000000000000005
+45,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,KFold,anova,0.47777777777777775,0.42478354978354976,0.4683333333333334
+46,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,KFold,mutual_info_classif,0.45555555555555555,0.3831168831168831,0.53
+47,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+48,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedKFold,anova,0.5666666666666667,0.5247835497835498,0.58
+49,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedKFold,mutual_info_classif,0.47777777777777775,0.4002109002109003,0.505
+50,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+51,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedShuffleSplit,anova,0.6666666666666667,0.6548701298701298,0.6549999999999999
+52,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.5111111111111111,0.4318559218559219,0.5200000000000001
+53,PSD - Total Power & Spectral Density Features,Fp1,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+54,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+55,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+56,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,KFold,chi2,0.5472222222222223,0.5010606060606061,0.615
+57,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+58,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+59,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedKFold,chi2,0.4277777777777777,0.42264790764790766,0.43499999999999994
+60,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+61,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.4666666666666666,0.31758241758241756,0.5
+62,PSD - Total Power & Spectral Density Features,Fp1,Random Forest,StratifiedShuffleSplit,chi2,0.48888888888888893,0.46311688311688315,0.5
+63,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,KFold,anova,0.45555555555555555,0.41576645576645577,0.43000000000000005
+64,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,KFold,mutual_info_classif,0.5916666666666667,0.5686796536796537,0.5816666666666667
+65,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,KFold,chi2,0.3833333333333333,0.3748701298701299,0.4
+66,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedKFold,anova,0.5222222222222223,0.47798867798867806,0.53
+67,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedKFold,mutual_info_classif,0.55,0.537987012987013,0.55
+68,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedKFold,chi2,0.3194444444444445,0.3001875901875902,0.32
+69,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedShuffleSplit,anova,0.6222222222222223,0.612092352092352,0.615
+70,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.5555555555555556,0.5346969696969698,0.5450000000000002
+71,PSD - Total Power & Spectral Density Features,Fp1,XGBoost,StratifiedShuffleSplit,chi2,0.4666666666666667,0.44000000000000006,0.48
+72,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+73,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+74,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+75,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+76,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+77,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+78,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+79,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+80,PSD - Total Power & Spectral Density Features,Fp1,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+81,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+82,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+83,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,KFold,chi2,0.41388888888888886,0.3844877344877345,0.48166666666666663
+84,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+85,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+86,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedKFold,chi2,0.4305555555555555,0.385995670995671,0.45
+87,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+88,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+89,PSD - Total Power & Spectral Density Features,Fp1,AdaBoost,StratifiedShuffleSplit,chi2,0.48888888888888893,0.4761111111111111,0.49000000000000005

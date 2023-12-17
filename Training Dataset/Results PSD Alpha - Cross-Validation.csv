@@ -1,0 +1,91 @@
+,feature_extraction,channels,classifier,cross-validation,feature-selection,accuracy,f1_score,AUC
+0,PSD - Alpha Features,All,Support Vector,KFold,anova,0.5472222222222223,0.48498001998001994,0.545
+1,PSD - Alpha Features,All,Support Vector,KFold,mutual_info_classif,0.4527777777777778,0.37108391608391605,0.5349999999999999
+2,PSD - Alpha Features,All,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+3,PSD - Alpha Features,All,Support Vector,StratifiedKFold,anova,0.4527777777777778,0.40108391608391614,0.46499999999999997
+4,PSD - Alpha Features,All,Support Vector,StratifiedKFold,mutual_info_classif,0.4083333333333333,0.3442096792096792,0.44000000000000006
+5,PSD - Alpha Features,All,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+6,PSD - Alpha Features,All,Support Vector,StratifiedShuffleSplit,anova,0.4444444444444445,0.3276223776223776,0.44000000000000006
+7,PSD - Alpha Features,All,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.48888888888888893,0.3776223776223776,0.505
+8,PSD - Alpha Features,All,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+9,PSD - Alpha Features,All,Random Forest,KFold,anova,0.4333333333333334,0.3382051282051282,0.515
+10,PSD - Alpha Features,All,Random Forest,KFold,mutual_info_classif,0.46944444444444444,0.4552092352092353,0.465
+11,PSD - Alpha Features,All,Random Forest,KFold,chi2,0.5666666666666667,0.49936507936507946,0.5216666666666667
+12,PSD - Alpha Features,All,Random Forest,StratifiedKFold,anova,0.5222222222222221,0.446964146964147,0.525
+13,PSD - Alpha Features,All,Random Forest,StratifiedKFold,mutual_info_classif,0.5,0.4546536796536797,0.495
+14,PSD - Alpha Features,All,Random Forest,StratifiedKFold,chi2,0.5444444444444445,0.5097835497835498,0.545
+15,PSD - Alpha Features,All,Random Forest,StratifiedShuffleSplit,anova,0.39999999999999997,0.3061938061938062,0.445
+16,PSD - Alpha Features,All,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.33333333333333337,0.2841358641358641,0.335
+17,PSD - Alpha Features,All,Random Forest,StratifiedShuffleSplit,chi2,0.4222222222222222,0.39956709956709957,0.41999999999999993
+18,PSD - Alpha Features,All,XGBoost,KFold,anova,0.5472222222222223,0.5207326007326007,0.5266666666666667
+19,PSD - Alpha Features,All,XGBoost,KFold,mutual_info_classif,0.525,0.5158152958152957,0.5566666666666668
+20,PSD - Alpha Features,All,XGBoost,KFold,chi2,0.5694444444444444,0.49996780996781,0.53
+21,PSD - Alpha Features,All,XGBoost,StratifiedKFold,anova,0.6805555555555556,0.6736796536796537,0.68
+22,PSD - Alpha Features,All,XGBoost,StratifiedKFold,mutual_info_classif,0.49722222222222223,0.49066378066378064,0.51
+23,PSD - Alpha Features,All,XGBoost,StratifiedKFold,chi2,0.5,0.49777777777777776,0.505
+24,PSD - Alpha Features,All,XGBoost,StratifiedShuffleSplit,anova,0.6444444444444444,0.6329437229437229,0.65
+25,PSD - Alpha Features,All,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.3111111111111111,0.2863636363636363,0.31
+26,PSD - Alpha Features,All,XGBoost,StratifiedShuffleSplit,chi2,0.4222222222222222,0.41722222222222216,0.425
+27,PSD - Alpha Features,All,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+28,PSD - Alpha Features,All,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+29,PSD - Alpha Features,All,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+30,PSD - Alpha Features,All,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+31,PSD - Alpha Features,All,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+32,PSD - Alpha Features,All,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+33,PSD - Alpha Features,All,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+34,PSD - Alpha Features,All,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+35,PSD - Alpha Features,All,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+36,PSD - Alpha Features,All,AdaBoost,KFold,anova,0.36666666666666664,0.26456876456876455,0.45
+37,PSD - Alpha Features,All,AdaBoost,KFold,mutual_info_classif,0.4027777777777778,0.3767066267066267,0.39666666666666667
+38,PSD - Alpha Features,All,AdaBoost,KFold,chi2,0.5277777777777778,0.5098701298701298,0.5349999999999999
+39,PSD - Alpha Features,All,AdaBoost,StratifiedKFold,anova,0.5222222222222221,0.44119214119214123,0.53
+40,PSD - Alpha Features,All,AdaBoost,StratifiedKFold,mutual_info_classif,0.5666666666666667,0.5293145743145744,0.5650000000000001
+41,PSD - Alpha Features,All,AdaBoost,StratifiedKFold,chi2,0.45555555555555555,0.4452525252525253,0.465
+42,PSD - Alpha Features,All,AdaBoost,StratifiedShuffleSplit,anova,0.42222222222222217,0.3393106893106893,0.465
+43,PSD - Alpha Features,All,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.4,0.35354423354423353,0.40499999999999997
+44,PSD - Alpha Features,All,AdaBoost,StratifiedShuffleSplit,chi2,0.48888888888888893,0.45811688311688314,0.49000000000000005
+45,PSD - Alpha Features,Fp1,Support Vector,KFold,anova,0.4611111111111111,0.3697435897435898,0.55
+46,PSD - Alpha Features,Fp1,Support Vector,KFold,mutual_info_classif,0.5027777777777778,0.46367965367965364,0.5700000000000001
+47,PSD - Alpha Features,Fp1,Support Vector,KFold,chi2,0.4611111111111111,0.3697435897435898,0.55
+48,PSD - Alpha Features,Fp1,Support Vector,StratifiedKFold,anova,0.4805555555555555,0.35888111888111884,0.525
+49,PSD - Alpha Features,Fp1,Support Vector,StratifiedKFold,mutual_info_classif,0.5944444444444444,0.5563220113220113,0.6100000000000001
+50,PSD - Alpha Features,Fp1,Support Vector,StratifiedKFold,chi2,0.4805555555555555,0.35888111888111884,0.525
+51,PSD - Alpha Features,Fp1,Support Vector,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+52,PSD - Alpha Features,Fp1,Support Vector,StratifiedShuffleSplit,mutual_info_classif,0.48888888888888893,0.43277222777222785,0.5050000000000001
+53,PSD - Alpha Features,Fp1,Support Vector,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+54,PSD - Alpha Features,Fp1,Random Forest,KFold,anova,0.5472222222222223,0.5271428571428571,0.5866666666666667
+55,PSD - Alpha Features,Fp1,Random Forest,KFold,mutual_info_classif,0.3611111111111111,0.34200577200577204,0.3866666666666666
+56,PSD - Alpha Features,Fp1,Random Forest,KFold,chi2,0.4583333333333333,0.44393217893217896,0.51
+57,PSD - Alpha Features,Fp1,Random Forest,StratifiedKFold,anova,0.4583333333333333,0.44393217893217896,0.4699999999999999
+58,PSD - Alpha Features,Fp1,Random Forest,StratifiedKFold,mutual_info_classif,0.4305555555555555,0.4142496392496392,0.43999999999999995
+59,PSD - Alpha Features,Fp1,Random Forest,StratifiedKFold,chi2,0.4805555555555555,0.4735930735930737,0.49000000000000005
+60,PSD - Alpha Features,Fp1,Random Forest,StratifiedShuffleSplit,anova,0.5555555555555556,0.5522222222222222,0.5650000000000001
+61,PSD - Alpha Features,Fp1,Random Forest,StratifiedShuffleSplit,mutual_info_classif,0.42222222222222217,0.37588911088911087,0.43
+62,PSD - Alpha Features,Fp1,Random Forest,StratifiedShuffleSplit,chi2,0.5777777777777777,0.5369841269841269,0.57
+63,PSD - Alpha Features,Fp1,XGBoost,KFold,anova,0.5666666666666667,0.5522222222222222,0.5800000000000001
+64,PSD - Alpha Features,Fp1,XGBoost,KFold,mutual_info_classif,0.5166666666666666,0.4918759018759019,0.5183333333333334
+65,PSD - Alpha Features,Fp1,XGBoost,KFold,chi2,0.47777777777777775,0.4738888888888889,0.5
+66,PSD - Alpha Features,Fp1,XGBoost,StratifiedKFold,anova,0.475,0.4614718614718615,0.47000000000000003
+67,PSD - Alpha Features,Fp1,XGBoost,StratifiedKFold,mutual_info_classif,0.3833333333333333,0.36944444444444446,0.385
+68,PSD - Alpha Features,Fp1,XGBoost,StratifiedKFold,chi2,0.45277777777777767,0.44335497835497834,0.45999999999999996
+69,PSD - Alpha Features,Fp1,XGBoost,StratifiedShuffleSplit,anova,0.48888888888888893,0.47512265512265517,0.51
+70,PSD - Alpha Features,Fp1,XGBoost,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.43888888888888894,0.44000000000000006
+71,PSD - Alpha Features,Fp1,XGBoost,StratifiedShuffleSplit,chi2,0.5333333333333334,0.5031168831168831,0.5199999999999999
+72,PSD - Alpha Features,Fp1,LigthGBM,KFold,anova,0.4111111111111111,0.2897435897435897,0.5
+73,PSD - Alpha Features,Fp1,LigthGBM,KFold,mutual_info_classif,0.4111111111111111,0.2897435897435897,0.5
+74,PSD - Alpha Features,Fp1,LigthGBM,KFold,chi2,0.4111111111111111,0.2897435897435897,0.5
+75,PSD - Alpha Features,Fp1,LigthGBM,StratifiedKFold,anova,0.45555555555555555,0.31282051282051276,0.5
+76,PSD - Alpha Features,Fp1,LigthGBM,StratifiedKFold,mutual_info_classif,0.45555555555555555,0.31282051282051276,0.5
+77,PSD - Alpha Features,Fp1,LigthGBM,StratifiedKFold,chi2,0.45555555555555555,0.31282051282051276,0.5
+78,PSD - Alpha Features,Fp1,LigthGBM,StratifiedShuffleSplit,anova,0.4444444444444445,0.30769230769230765,0.5
+79,PSD - Alpha Features,Fp1,LigthGBM,StratifiedShuffleSplit,mutual_info_classif,0.4444444444444445,0.30769230769230765,0.5
+80,PSD - Alpha Features,Fp1,LigthGBM,StratifiedShuffleSplit,chi2,0.4444444444444445,0.30769230769230765,0.5
+81,PSD - Alpha Features,Fp1,AdaBoost,KFold,anova,0.4583333333333333,0.4347041847041847,0.515
+82,PSD - Alpha Features,Fp1,AdaBoost,KFold,mutual_info_classif,0.38333333333333336,0.36187590187590185,0.4033333333333333
+83,PSD - Alpha Features,Fp1,AdaBoost,KFold,chi2,0.4583333333333333,0.44970418470418466,0.4666666666666667
+84,PSD - Alpha Features,Fp1,AdaBoost,StratifiedKFold,anova,0.475,0.4425324675324675,0.48500000000000004
+85,PSD - Alpha Features,Fp1,AdaBoost,StratifiedKFold,mutual_info_classif,0.4305555555555555,0.420021645021645,0.43499999999999994
+86,PSD - Alpha Features,Fp1,AdaBoost,StratifiedKFold,chi2,0.46944444444444444,0.46098124098124105,0.485
+87,PSD - Alpha Features,Fp1,AdaBoost,StratifiedShuffleSplit,anova,0.5111111111111111,0.49422799422799424,0.515
+88,PSD - Alpha Features,Fp1,AdaBoost,StratifiedShuffleSplit,mutual_info_classif,0.5333333333333334,0.5143506493506494,0.525
+89,PSD - Alpha Features,Fp1,AdaBoost,StratifiedShuffleSplit,chi2,0.4666666666666666,0.43098290598290595,0.45
