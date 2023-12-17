@@ -119,3 +119,8 @@ The final idea of the project has been to verify that the performance of the pre
 
 ## 5. Results
 
+Using techniques such as cross-validation, feature selection, and five different classification models, we have generated predictions. Based on these predictions, we created a dashboard that compares the results of using only the FP1 channel versus using other available channels.
+
+It can be inferred that the most satisfactory outcomes are obtained when utilizing features from all channels. Nevertheless, in some inspections, accuracies of up to +20% were achieved by using features solely from the FP1 channel. Although models still require optimization and enhancement, this result provides a certain level of confidence in relying solely on the front-end channels.
+
+Tableau Public: [EEG Prediction Analysis from Alzheimer and Frontotemporal Dementia](https://public.tableau.com/app/profile/sobiedd.chavez/viz/EEGPredictionAnalysisfromAlzheimerandFrontotemporalDementia/Summary#1)

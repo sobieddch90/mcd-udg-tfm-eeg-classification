@@ -23,6 +23,8 @@ And finally by the usage of the PSD method to get features such as:
 Here you can find the following notebooks:
 1. **Preselect EEG Datasets**: The total subjects are divided into 3 classes, Alzheimer Disease, Frontotemporal Dementia and Healthy Control. The last one is not necessary for the model, due to the approach is supported with the MMSE method which already has the independecy to decide a subject is healthy or not. In addition, the dataset are unbalanced, to ensure a better performance of the model the number of subject for each disease should be the same, if not, an overfitting could be found.
 2. **Feature Extraction PSD**: With the MNE support and the PSD method which allows to get the Power Spectral Density in a frequency range, we can obtain the list of features we want and also separate the frequency in bands. The final result of this notebook will be the two datasets for the traning separated into the two approaches (All Channels and FP1 channel).
+3. Another feature extraction used to plot the signals by using an external tool to do dashboard and understand the EEG Data.
+4. **Feature Extraction PSD without Frequency Bands**: similar to the previous feature extraction but in this case avoiding the usage of frequency bands to get a new prediction approach.
 
 >The training dataset can be found in the `Training Dataset` directory
 

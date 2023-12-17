@@ -515,7 +515,7 @@ classifiers = {
     'Support Vector': SVC(),
     'Random Forest': RandomForestClassifier(),
     'XGBoost': xgb.XGBClassifier(),
-    'LigthGBM': lgb.LGBMClassifier(**params_lightGBM),
+    'LightGBM': lgb.LGBMClassifier(**params_lightGBM),
     'AdaBoost': AdaBoostClassifier()
 }
 
